@@ -89,7 +89,9 @@ const AdminPanel = () => {
 
   const addJudge = async () => {
     try {
-      await axios.post('http://localhost:5000/api/judges', {
+      // await axios.post('http://localhost:5000/api/judges', {
+      await axios.post(`${process.env.VITE_API_URL}/api/judges`, {
+
         name,
         totalPoints: parseInt(points),
       });

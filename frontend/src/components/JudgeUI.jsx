@@ -20,7 +20,8 @@ const [selectedJudgeId, setSelectedJudgeId] = useState(null);
   const fetchJudgeDetails = async () => {
     if (!selectedJudgeId) return;
     try {
-      const res = await axios.get(`http://localhost:5000/api/judges/${selectedJudgeId}`);
+      // const res = await axios.get(`http://localhost:5000/api/judges/${selectedJudgeId}`);
+      const res = await axios.get(`${process.env.VITE_API_URL}/api/judges/${selectedJudgeId}`);
       const { maxPoints, assignedPoints } = res.data;
 setRemainingPoints(maxPoints - assignedPoints);
     } catch (err) {
@@ -46,7 +47,8 @@ useEffect(() => {
   useEffect(() => {
   const fetchJudges = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/judges');
+      // const res = await axios.get('http://localhost:5000/api/judges');
+      const res = await axios.get(`${process.env.VITE_API_URL}/api/judges`);
       setJudges(res.data);
     } catch (err) {
       toast.error('Error fetching judges');
