@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "dev": "vite"
+    "start": "vite start",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
