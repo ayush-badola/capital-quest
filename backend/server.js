@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 
 // Configure Express CORS
-const allowedOrigins = process.env.CLIENT_URL.split(',');
+const allowedOrigins = process.env.CLIENT_URL;
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
